@@ -1,0 +1,30 @@
+Circuit Breaker, Discovery Service, Spring Cloud Config, Distributed Tracing ?
+
+Circuit Breaker: Bir sistemdeki servisler arası iletişimde, hatalı durumlarda (örneğin, hizmet kesintisi) devre dışı bırakarak sistemi korumak için kullanılan bir desen. Özellikle mikroservis mimarilerinde kullanılır.
+
+Discovery Service: Servislerin dinamik olarak kaydedilip bulunabildiği bir yapı. Mikroservis mimarilerinde, servislerin IP adresleri veya portlarına bağımlı olmadan birbirlerini bulabilmelerini sağlar.
+
+Spring Cloud Config: Mikroservis yapılarında bulunan farklı servisler için merkezi yapılandırma yönetimi sağlayan bir çözümdür. Bu, servislerin ayrı ayrı yapılandırmalarını yönetmek yerine tek bir yerden yapılandırılmasını sağlar.
+
+Distributed Tracing: Dağıtık sistemlerde, bir isteğin tüm sistem boyunca nasıl ilerlediğini ve hangi servislerin çağrıldığını izleme ve analiz etme sürecidir. Performans sorunlarını tespit etmek ve optimize etmek için kullanılır.
+
+--------------------------------------------------------------
+Mikroservis mimarisi, büyük ve karmaşık bir uygulamayı birbiriyle iletişim halinde olan küçük bağımsız servisler olarak parçalayarak geliştirmeyi amaçlar. Bu mimariyi oluşturan temel bileşenlerden bazıları şunlardır:
+
+Eureka Server: Servis keşfi ve kayıt hizmeti sunan, Netflix tarafından geliştirilen bir REST tabanlı hizmetdir. Mikroservisler, Eureka Server'a kaydolur ve diğer servislerin adreslerini bulmak için buradan bilgi alabilirler. Servisler arası iletişimi dinamikleştirmek için kullanılır.
+
+API Gateway: Gelen istekleri yönlendiren ve yöneten bir giriş noktasıdır. Birden fazla mikroservis tarafından sunulan işlevleri tek bir noktada birleştirir ve dış dünyadaki istemcilerle bu servisler arasındaki iletişimi kolaylaştırır. Örneğin, istemcilere hizmet sunmak için gelen istekleri doğru mikroservislere yönlendirir.
+
+Config Server: Uygulama yapılandırma bilgilerini depolayan ve yöneten bir merkezi sunucudur. Mikroservislerin yapılandırma bilgilerini merkezi bir konumda saklayarak, değişikliklerin merkezi bir yerden güncellenmesini sağlar. Bu sayede servislerin yapılandırması kolayca güncellenebilir.
+
+Service Registry: Servislerin kaydedildiği ve kaynakların bulunduğu bir kayıt defteridir. Eureka gibi teknolojiler, servislerin adlarını, konumlarını ve durumlarını takip eder. Diğer servisler bu kayıt defterinden hizmetlerin yerlerini öğrenirler.
+
+Load Balancing: Yük dengeleme, gelen istekleri farklı servislere dağıtarak yükü eşit bir şekilde paylaştırır. Böylece bir servisin aşırı yük altında olması durumunda diğer servisler devreye girer ve istekleri paylaşarak performansı artırır.
+
+-------------------------------------------------------------
+
+Service Registry, mikroservislerin kaydedildiği ve kaynakların bulunduğu bir kayıt defteridir. Servislerin adlarını, konumlarını, durumlarını ve diğer metadata bilgilerini içerir. Bu kayıt defteri, servislerin bulunabilirliğini ve erişilebilirliğini sağlar. Service Registry, genellikle bir veritabanı veya merkezi bir hizmet olarak kullanılır ve servislerin bilgilerini saklar.
+
+Service Discovery ise, bu Service Registry (servis kayıt defteri) içindeki kayıtlı servislere erişme sürecidir. Yani, Service Discovery, bir servisin konumunu ve iletişim bilgilerini Service Registry'den bulma işlemidir. Mikroservisler, Service Discovery mekanizmalarını kullanarak diğer servislerin adreslerini ve bilgilerini alır ve bu sayede servisler arası iletişimi kurarlar.
+
+Kısacası, Service Registry servislerin bilgilerini saklayan bir kayıt defteridir, Service Discovery ise bu kayıt defterindeki servislerin konumlarını ve iletişim bilgilerini bulmayı sağlayan süreçtir. İkisi birbirini tamamlayan fakat farklı işlevlere sahip olan kavramlardır.
