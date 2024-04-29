@@ -28,3 +28,12 @@ Service Registry, mikroservislerin kaydedildiği ve kaynakların bulunduğu bir 
 Service Discovery ise, bu Service Registry (servis kayıt defteri) içindeki kayıtlı servislere erişme sürecidir. Yani, Service Discovery, bir servisin konumunu ve iletişim bilgilerini Service Registry'den bulma işlemidir. Mikroservisler, Service Discovery mekanizmalarını kullanarak diğer servislerin adreslerini ve bilgilerini alır ve bu sayede servisler arası iletişimi kurarlar.
 
 Kısacası, Service Registry servislerin bilgilerini saklayan bir kayıt defteridir, Service Discovery ise bu kayıt defterindeki servislerin konumlarını ve iletişim bilgilerini bulmayı sağlayan süreçtir. İkisi birbirini tamamlayan fakat farklı işlevlere sahip olan kavramlardır.
+
+
+--------------------------------------------------------------
+
+Zipkin: Dağıtık sistemlerde mikroservis mimarilerinde kullanılan bir izleme (tracing) sistemidir. İsteklerin izlenmesini ve performansını görselleştirir. Monolitik bir uygulama içindeki farklı bileşenlerin (örneğin, farklı modüller veya hizmetler) arasındaki iletişimi izlemek ve performansı ölçmek için Zipkin kullanılabilir.
+
+Grafana: Grafana, veri görselleştirme ve analiz aracıdır. Grafana, çeşitli veri kaynaklarından veri alabilir ve bu verileri çeşitli grafikler, tablolar ve panolar aracılığıyla kullanıcı dostu bir şekilde görselleştirebilir. Monolitik bir projede, uygulamanın çeşitli metriklerini (örneğin, işlem süreleri, CPU kullanımı, bellek tüketimi vb.) izlemek için kullanılabilir.
+
+Kibana: Kibana, Elasticsearch ile birlikte çalışan bir veri görselleştirme aracıdır. Genellikle loglama ve log verilerinin analizi için kullanılır. Monolitik bir projede, uygulama günlüklerini izlemek, hata ayıklamak ve performans sorunlarını belirlemek için kullanılabilir.
